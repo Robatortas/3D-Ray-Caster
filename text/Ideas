@@ -1,0 +1,49 @@
+GAME JAM THEME (OPTIONAL): Nature
+
+-Horror?
+-Hunting?
+-Platformer?
+
+Resolution: 8x;
+artStyle() {
+	if(hunting){
+		-happy
+		-vivid
+		-cute
+	}
+}
+
+Mobs() {
+	if(horror){
+		-skinny walking creature?
+		-chubby, dude?
+	}
+	
+	if(hunting){
+		-deers
+		-birds
+		-cows
+		-sheep
+		-chicken
+		-bear
+	}
+}
+
+Player: Your average dude;
+
+Items() {
+	if(horror){
+		-gun
+		-knife
+		-bat
+		-molotov
+		-lighter
+		-food
+	}
+	
+	if(hunting){
+		-gun
+		-knife
+		-food
+	}
+}
