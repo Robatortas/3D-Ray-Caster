@@ -106,19 +106,6 @@ public class Screen {
 		}
 	}
 	
-	public void renderRay(int x0, int y0, int x1, int y1) {
-		int dx = (int) (x1 - x0);
-		int dy = (int) (y1 - y0);
-				
-		for (int x = (int) x0; x < x1; x++){
-			int y = (int) (y0 + dy * (x - x0) / dx);
-			
-			if(x < 0 || y < 0 || x >= width || y >= height) break;
-			
-				pixels[x+y*width] = 0xff00ff;
-		}
-	}
-	
 	public void setOffsets(int xOffset, int yOffset) {
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;

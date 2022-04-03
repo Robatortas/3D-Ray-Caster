@@ -11,6 +11,7 @@ import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 
 import robatortas.code.files.entity.mob.Player;
+import robatortas.code.files.entity.mob.Ray;
 import robatortas.code.files.input.KeyInput;
 import robatortas.code.files.level.GameLevel;
 import robatortas.code.files.level.Level;
@@ -39,7 +40,7 @@ public class Game extends Canvas implements Runnable{
 	private Display display;
 	private Screen screen;
 	
-	public KeyInput key;
+	public KeyInput key = Level.key;
 	
 	public Player player;
 	
@@ -99,9 +100,14 @@ public class Game extends Canvas implements Runnable{
 	}
 	
 	int tickTime = 0;
+	
+	Ray ray = new Ray(Game.WIDTH/2-3, Game.HEIGHT/2 -10, 20<<3, 18<<3, key);
+	
 	public void tick() {
 		tickTime++;
 		level.tick();
+		
+		ray.tick();
 	}
 	
 	public void render() {
@@ -123,6 +129,8 @@ public class Game extends Canvas implements Runnable{
 		xScroll = GameLevel.player.x-WIDTH/2+10;
 		yScroll = GameLevel.player.y-HEIGHT/2+15;
 		level.render(xScroll, yScroll, screen);
+		
+		ray.render(screen);
 		
 		Graphics g = bs.getDrawGraphics();
 		g.setColor(Color.black);

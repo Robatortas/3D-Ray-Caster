@@ -37,10 +37,10 @@ public class Player extends Mob {
 		else animate=0;
 		
 		int xa = 0, ya = 0;
-		if(key.up) ya-=velY;
-		if(key.down) ya+=velY;
-		if(key.left) xa-=velX;
-		if(key.right) xa+=velX;
+		if(key.w) ya-=velY;
+		if(key.s) ya+=velY;
+		if(key.a) xa-=velX;
+		if(key.d) xa+=velX;
 		
 		if(key.f || key.space) {
 			if(punch==false) {
@@ -160,11 +160,6 @@ public class Player extends Mob {
 		screen.renderMob(x, y, this, sprite, flip);
 		
 //		screen.renderRays(x, y);
-		
-		screen.renderRay(0, 0, x<<3, y<<3);
-		
-		
-		for(int i = 0; i < 40; i++)screen.renderRay(0, 0, x + random.nextInt(20), y);
 		
 		if (attackTime > 0) {
 			if (dir == 0) {
